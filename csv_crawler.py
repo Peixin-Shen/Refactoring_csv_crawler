@@ -20,8 +20,8 @@ Doctor = 0
 college = 0
 Acollege = 0
 high = 0
-sec = 0
-ele = 0
+Juniorhigh = 0
+Elementary = 0
 k = -1
 x = -1
 age15 = 0
@@ -31,8 +31,8 @@ age29 = 0
 age34 = 0
 age39 = 0
 age44 = 0
-age49 = 0
-age50 = 0
+age45to49 = 0
+age50up = 0
 ##
 DOC=[]
 MASTER=[]
@@ -54,6 +54,7 @@ loc=[]
 locAge=[]
 ##
 
+<<<<<<< HEAD
 def printresult(k, Doc, master, college, Acollege, high, sec, ele):
     print(ciytName[k],'\n')
     print('³Õ¤h²¦·~:', Doc, '¤H')
@@ -63,16 +64,28 @@ def printresult(k, Doc, master, college, Acollege, high, sec, ele):
     print('°ª¤¤²¦·~:', high, '¤H')
     print('°ê¤¤²¦·~:', sec, '¤H')
     print('°ê¤p¥H¤U²¦·~:', ele, '¤H')
+=======
+def printresult(k, Doc, master, college, Acollege, high, Juniorhigh, Elementary):
+    print(j[k],'\n')
+    print('åšå£«ç•¢æ¥­:', Doc, 'äºº')
+    print('ç¢©å£«ç•¢æ¥­:', master, 'äºº')
+    print('å¤§å­¸ç•¢æ¥­:', college, 'äºº')
+    print('å°ˆç§‘ç•¢æ¥­:', Acollege, 'äºº')
+    print('é«˜ä¸­ç•¢æ¥­:', high, 'äºº')
+    print('åœ‹ä¸­ç•¢æ¥­:', Juniorhigh, 'äºº')
+    print('åœ‹å°ä»¥ä¸‹ç•¢æ¥­:', Elementary, 'äºº')
+>>>>>>> origin/Leo_0805
     DOC.append(Doc)
     MASTER.append(master)
     COLLEGE.append(college)
     ACOLLEGE.append(Acollege)
     HIGH.append(high)
-    SEC.append(sec)
-    ELE.append(ele)
-    loc.append(Doc+master+college+Acollege+high+sec+ele)
+    SEC.append(Juniorhigh)
+    ELE.append(Elementary)
+    loc.append(Doc + master + college + Acollege + high + Juniorhigh + Elementary)
     print()
     
+<<<<<<< HEAD
 def printage(age15,age19,age19to24,age29,age34,age39,age44,age49,age50):
     print('¥¼º¡15·³:', age15, '¤H')
     print("15¡ã19·³:", age19, '¤H')
@@ -83,6 +96,18 @@ def printage(age15,age19,age19to24,age29,age34,age39,age44,age49,age50):
     print("40¡ã44·³:", age44, '¤H')
     print("45¡ã49·³:", age49, '¤H')
     print("50·³¥H¤W:", age50, '¤H')
+=======
+def printage(age15, age19, age24, age29, age34, age39, age44, age45to49, age50up):
+    print('æœªæ»¿15æ­²:', age15, 'äºº')
+    print("15ï½ž19æ­²:", age19, 'äºº')
+    print("20ï½ž24æ­²:", age24, 'äºº')
+    print("25ï½ž29æ­²:", age29, 'äºº')
+    print("30ï½ž34æ­²:", age34, 'äºº')
+    print("35ï½ž39æ­²:", age39, 'äºº')
+    print("40ï½ž44æ­²:", age44, 'äºº')
+    print("45ï½ž49æ­²:", age45to49, 'äºº')
+    print("50æ­²ä»¥ä¸Š:", age50up, 'äºº')
+>>>>>>> origin/Leo_0805
     Age15.append(age15)
     Age19.append(age19)
     Age24.append(age19to24)
@@ -90,9 +115,15 @@ def printage(age15,age19,age19to24,age29,age34,age39,age44,age49,age50):
     Age34.append(age34)
     Age39.append(age39)
     Age44.append(age44)
+<<<<<<< HEAD
     Age49.append(age49)
     Age50.append(age50)
     locAge.append(age15+age19+age19to24+age29+age34+age39+age44+age49+age50)
+=======
+    Age49.append(age45to49)
+    Age50.append(age50up)
+    locAge.append(age15 + age19 + age24 + age29 + age34 + age39 + age44 + age45to49 + age50up)
+>>>>>>> origin/Leo_0805
 
 for i in range(2,len(result)):
     if result[i][6] == '³Õ¤h²¦·~' and int(result[i][7]) > 0:
@@ -105,10 +136,17 @@ for i in range(2,len(result)):
         Acollege += int(result[i][7])
     elif result[i][6] == '°ª¤¤²¦·~' and int(result[i][7]) > 0:
         high += int(result[i][7])
+<<<<<<< HEAD
     elif result[i][6] == '°ê¤¤²¦·~' and int(result[i][7]) > 0:
         sec += int(result[i][7])
     elif result[i][6] == '°ê¤p²¦·~¥H¤U' and int(result[i][7]) > 0:
         ele += int(result[i][7])
+=======
+    elif result[i][6] == 'åœ‹ä¸­ç•¢æ¥­' and int(result[i][7]) > 0:
+        Juniorhigh += int(result[i][7])
+    elif result[i][6] == 'åœ‹å°ç•¢æ¥­ä»¥ä¸‹' and int(result[i][7]) > 0:
+        Elementary += int(result[i][7])
+>>>>>>> origin/Leo_0805
 
     if result[i][5] == '¥¼º¡15·³' and int(result[i][7]) > 0:
         age15 += int(result[i][7])
@@ -124,6 +162,7 @@ for i in range(2,len(result)):
         age39 += int(result[i][7])
     elif result[i][5] == '40¡ã44·³' and int(result[i][7]) > 0:
         age44 += int(result[i][7])
+<<<<<<< HEAD
     elif result[i][5] == '45¡ã49·³' and int(result[i][7]) > 0:
         age49 += int(result[i][7])
     elif result[i][5] == '50·³¥H¤W' and int(result[i][7]) > 0:
@@ -133,14 +172,25 @@ for i in range(2,len(result)):
             k = k + 1
             printresult(k, Doc, master, college, Acollege, high, sec, ele)
             printage(age15, age19, age19to24, age29, age34, age39, age44, age49, age50)
+=======
+    elif result[i][5] == '45ï½ž49æ­²' and int(result[i][7]) > 0:
+        age45to49 += int(result[i][7])
+    elif result[i][5] == '50æ­²ä»¥ä¸Š' and int(result[i][7]) > 0:
+        age50up += int(result[i][7])
+    if i!=len(result)-1:
+        if result[i][2][0:2] != result[i+1][2][0:2]:
+            k = k + 1
+            printresult(k, Doc, master, college, Acollege, high, Juniorhigh, Elementary)
+            printage(age15, age19, age24, age29, age34, age39, age44, age45to49, age50up)
+>>>>>>> origin/Leo_0805
             print('\n')
             Doc = 0
             master = 0
             college = 0
             Acollege = 0
             high = 0
-            sec = 0
-            ele = 0
+            Juniorhigh = 0
+            Elementary = 0
             age15 = 0
             age19 = 0
             age19to24 = 0
@@ -148,12 +198,17 @@ for i in range(2,len(result)):
             age34 = 0
             age39 = 0
             age44 = 0
-            age49 = 0
-            age50 = 0
+            age45to49 = 0
+            age50up = 0
     else:
         k = k + 1
+<<<<<<< HEAD
         printresult(k, Doc, master, college, Acollege, high, sec, ele)
         printage(age15, age19, age19to24, age29, age34, age39, age44, age49, age50)
+=======
+        printresult(k, Doc, master, college, Acollege, high, Juniorhigh, Elementary)
+        printage(age15, age19, age24, age29, age34, age39, age44, age45to49, age50up)
+>>>>>>> origin/Leo_0805
         print('\n\n')
 
 #%% ¦~ÄÖ¼hªºªø±ø¹Ï
