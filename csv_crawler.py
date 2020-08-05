@@ -21,11 +21,9 @@ Doctor = 0
 college = 0
 =======
 j = ['新北市 New Taipei', '臺北市 Taipei', '桃園市 Taoyuan', '臺中市 Taichung', '臺南市 Tainan', '高雄市 Kaohsiung', '宜蘭縣 Yilan',
-     '新竹縣 Hsinchu', '苗栗縣 Miaoli', '彰化縣 Changhua', '南投縣 Nantou', '雲林縣 Yunlin', '嘉義縣 Chiayi', '屏東縣 Pingtung',
-     '臺東縣 Taitung',
-     '花蓮縣 Hualien', '澎湖縣 Penghu', '基隆市 Keelung', '新竹市 Hsinchu', '嘉義市 Chiayi', '金門縣 Kinmen', '連江縣 Lianjiang']
+     '新竹縣 Hsinchu', '苗栗縣 Miaoli', '彰化縣 Changhua', '南投縣 Nantou', '雲林縣 Yunlin', '嘉義縣 Chiayi', '屏東縣 Pingtung', '臺東縣 Taitung',
+     '花蓮縣 Hualien', '澎湖縣 Penghu', '基隆市 Keelung','新竹市 Hsinchu','嘉義市 Chiayi', '金門縣 Kinmen', '連江縣 Lianjiang']
 Doc = 0
-<<<<<<< HEAD
 Master = 0
 University = 0
 >>>>>>> origin/lenny0805
