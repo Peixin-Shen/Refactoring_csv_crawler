@@ -15,8 +15,8 @@ j = ['新北市 New Taipei', '臺北市 Taipei', '桃園市 Taoyuan', '臺中市
      '新竹縣 Hsinchu', '苗栗縣 Miaoli', '彰化縣 Changhua', '南投縣 Nantou', '雲林縣 Yunlin', '嘉義縣 Chiayi', '屏東縣 Pingtung', '臺東縣 Taitung',
      '花蓮縣 Hualien', '澎湖縣 Penghu', '基隆市 Keelung','新竹市 Hsinchu','嘉義市 Chiayi', '金門縣 Kinmen', '連江縣 Lianjiang']
 Doc = 0
-  master = 0
-college = 0
+Master = 0
+University = 0
 Acollege = 0
 high = 0
 sec = 0
@@ -26,8 +26,8 @@ x = -1
 age15 = 0
 age19 = 0
 age24 = 0
-age29 = 0
-age34 = 0
+age25to29 = 0
+age30to34 = 0
 age39 = 0
 age44 = 0
 age49 = 0
@@ -53,31 +53,31 @@ loc=[]
 locAge=[]
 ##
 
-def printresult(k, Doc, master, college, Acollege, high, sec, ele):
+def printresult(k, Doc, Master, University, Acollege, high, sec, ele):
     print(j[k],'\n')
     print('博士畢業:', Doc, '人')
-    print('碩士畢業:', master, '人')
-    print('大學畢業:', college, '人')
+    print('碩士畢業:', Master, '人')
+    print('大學畢業:', University, '人')
     print('專科畢業:', Acollege, '人')
     print('高中畢業:', high, '人')
     print('國中畢業:', sec, '人')
     print('國小以下畢業:', ele, '人')
     DOC.append(Doc)
-    MASTER.append(master)
-    COLLEGE.append(college)
+    MASTER.append(Master)
+    COLLEGE.append(University)
     ACOLLEGE.append(Acollege)
     HIGH.append(high)
     SEC.append(sec)
     ELE.append(ele)
-    loc.append(Doc+master+college+Acollege+high+sec+ele)
+    loc.append(Doc+Master+University+Acollege+high+sec+ele)
     print()
     
-def printage(age15,age19,age24,age29,age34,age39,age44,age49,age50):
+def printage(age15, age19, age24, age25to29, age30to34, age39, age44, age49, age50):
     print('未滿15歲:', age15, '人')
     print("15～19歲:", age19, '人')
     print("20～24歲:", age24, '人')
-    print("25～29歲:", age29, '人')
-    print("30～34歲:", age34, '人')
+    print("25～29歲:", age25to29, '人')
+    print("30～34歲:", age30to34, '人')
     print("35～39歲:", age39, '人')
     print("40～44歲:", age44, '人')
     print("45～49歲:", age49, '人')
@@ -85,21 +85,21 @@ def printage(age15,age19,age24,age29,age34,age39,age44,age49,age50):
     Age15.append(age15)
     Age19.append(age19)
     Age24.append(age24)
-    Age29.append(age29)
-    Age34.append(age34)
+    Age29.append(age25to29)
+    Age34.append(age30to34)
     Age39.append(age39)
     Age44.append(age44)
     Age49.append(age49)
     Age50.append(age50)
-    locAge.append(age15+age19+age24+age29+age34+age39+age44+age49+age50)
+    locAge.append(age15+age19+age24+age25to29+age30to34+age39+age44+age49+age50)
 
 for i in range(2,len(result)):
     if result[i][6] == '博士畢業' and int(result[i][7]) > 0:
         Doc += int(result[i][7])
     elif result[i][6] == '碩士畢業' and int(result[i][7]) > 0:
-        master += int(result[i][7])
+        Master += int(result[i][7])
     elif result[i][6] == '大學畢業' and int(result[i][7]) > 0:
-        college += int(result[i][7])
+        University += int(result[i][7])
     elif result[i][6] == '專科畢業' and int(result[i][7]) > 0:
         Acollege += int(result[i][7])
     elif result[i][6] == '高中畢業' and int(result[i][7]) > 0:
@@ -116,9 +116,9 @@ for i in range(2,len(result)):
     elif result[i][5] == '20～24歲' and int(result[i][7]) > 0:
         age24 += int(result[i][7])
     elif result[i][5] == '25～29歲' and int(result[i][7]) > 0:
-        age29 += int(result[i][7])
+        age25to29 += int(result[i][7])
     elif result[i][5] == '30～34歲' and int(result[i][7]) > 0:
-        age34 += int(result[i][7])
+        age30to34 += int(result[i][7])
     elif result[i][5] == '35～39歲' and int(result[i][7]) > 0:
         age39 += int(result[i][7])
     elif result[i][5] == '40～44歲' and int(result[i][7]) > 0:
@@ -130,12 +130,12 @@ for i in range(2,len(result)):
     if i!=len(result)-1:
         if result[i][2][0:2] != result[i+1][2][0:2]:
             k = k + 1
-            printresult(k, Doc, master, college, Acollege, high, sec, ele)
-            printage(age15, age19, age24, age29, age34, age39, age44, age49, age50)
+            printresult(k, Doc, Master, University, Acollege, high, sec, ele)
+            printage(age15, age19, age24, age25to29, age30to34, age39, age44, age49, age50)
             print('\n')
             Doc = 0
-            master = 0
-            college = 0
+            Master = 0
+            University = 0
             Acollege = 0
             high = 0
             sec = 0
@@ -143,16 +143,16 @@ for i in range(2,len(result)):
             age15 = 0
             age19 = 0
             age24 = 0
-            age29 = 0
-            age34 = 0
+            age25to29 = 0
+            age30to34 = 0
             age39 = 0
             age44 = 0
             age49 = 0
             age50 = 0
     else:
         k = k + 1
-        printresult(k, Doc, master, college, Acollege, high, sec, ele)
-        printage(age15, age19, age24, age29, age34, age39, age44, age49, age50)
+        printresult(k, Doc, Master, University, Acollege, high, sec, ele)
+        printage(age15, age19, age24, age25to29, age30to34, age39, age44, age49, age50)
         print('\n\n')
 
 #%% 年齡層的長條圖
